@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+
+<title>Mi Página</title>
+
+<style>
+
+body{
+ margin: 0;
+ background-color:cornflowerblue;
+    
+}
+
+/* cuadro verde */
+.contenedor{
+    width:60%;
+    min-height:100vh;
+    background:lightgoldenrodyellow;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+/* imágenes */
+.imagenes{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+}
+
+/* cuando cambia */
+.horizontal{
+
+    flex-direction:row;
+
+    justify-content:center;
+    
+}
+
+/* tamaño imágenes */
+img{
+    width:220px ;
+
+    height: 200px;
+}
+
+/* botón */
+button{
+    padding:10px 20px;
+
+    margin:20px;
+
+    cursor:pointer;
+}
+.horizontal .texto2{
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>Gracias por visitarme</h1>
+    
+    <h4 style="text-align: left;"> Escudo de Bolivia</h4>
+    <button onclick="cambiar()" id="boton">
+        Hide
+    </button>
+    
+    <div class="imagenes" id="imgs">
+
+        <img src="escudobolivia.png">
+<h4 class="texto2"> Escudo de la U.E.: JCM</h4>
+        <img src="JCM.jpg">
+
+    </div>
+
+</div>
+
+<script>
+
+function cambiar(){
+
+    let caja = document.getElementById("imgs");
+
+    let boton = document.getElementById("boton");
+
+    caja.classList.toggle("horizontal");
+
+    if(caja.classList.contains("horizontal")){
+
+        boton.innerHTML = "Toggle";
+
+    }else{
+
+        boton.innerHTML = "Hide";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

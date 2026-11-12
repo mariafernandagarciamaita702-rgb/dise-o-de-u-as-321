@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SISTEMA DE GESTION</title>
+    
+    <style>
+    
+        body {
+            
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+          
+        }
+
+        
+        header {
+            background-color: #0056b3;
+            color: white;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 0px 30px;
+            
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .header-left i {
+            font-size: 24px;
+        }
+        .menu a{
+            color:#ffffff;
+            text-decoration:none;
+             margin:15px;
+            
+            font-size:14px;
+            transition:0.3s;
+        }
+        .menu a:hover{
+            color:white;
+            text-align: left;
+        }
+       
+        
+
+       
+
+        main {
+            padding: 40px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .titles {
+            margin-bottom: 30px;
+            text-align: left; 
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 0 0 5px 0;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+       
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            border-radius: 10px;
+            padding: 25px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 110px;
+        }
+
+        .card-emoji {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .card-value {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-label {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        
+        .card-blue { background-color: #17a2b8; }
+        .card-green { background-color: #28a745; }
+        .card-orange { background-color: #fd7e14; }
+        .card-purple { background-color: #6f42c1; }
+    </style>
+</head>
+<body>
+<div class="contenedor-cuadros">
+        
+        <div class="cuadro-metrica">
+            <p class="titulo-cuadro">Estudiantes</p>
+            <p class="numero-cuadro">4</p>
+        </div>
+
+        
+        <div class="cuadro-metrica">
+            <p class="titulo-cuadro">Docentes</p>
+            <p class="numero-cuadro">3</p>
+        </div>
+
+        
+        <div class="cuadro-metrica">
+            <p class="titulo-cuadro">Administrativos</p>
+            <p class="numero-cuadro">2</p>
+        </div>
+
+        
+        <div class="cuadro-metrica">
+            <p class="titulo-cuadro">Cursos</p>
+            <p class="numero-cuadro">1</p>
+        </div>
+
+       
+        <div class="cuadro-metrica">
+            <p class="titulo-cuadro">Inscritos</p>
+            <p class="numero-cuadro">0</p>
+        </div>
+    </div>
+    <header>
+        
+        <div class="header-left">
+            <i class="fa-solid fa-user-graduate"></i>
+             <div class="titles">
+            <h1>José Clemente Maurer</h1>
+            <p class="subtitle"> Sistema de Gestion Escolar</p>
+        </div>
+        
+        <div class="menu">
+
+            <a href="Inicio">Inicio</a>
+        
+            <a href="Registro">Registro</a>
+        
+            <a href="Estudiantes">Estudiantes</a> 
+        
+            <a href="Kardex">Kardex</a>
+        
+            <a href="Maestros">Maestros</a> </div>
+
+
+       
+       
+    </header>
+
+    <main>
+        
+  
+    <main>
+        
+        
+
+        
+        <div class="dashboard-grid">
+
+     
+            
+            
+            <div class="card card-blue">
+                <div class="card-emoji">👨‍🎓Activo</div>
+                <div>
+                    <div class="card-value">400</div>
+                    <div class="card-label">Estudiantes</div>
+                </div>
+            </div>
+
+            
+            <div class="card card-green">
+                <div class="card-emoji">👩‍🏫plantel</div>
+                <div>
+                    <div class="card-value">25</div>
+                    <div class="card-label">Docentes activos</div>
+                </div>
+            </div>
+
+            
+            <div class="card card-orange">
+                <div class="card-emoji">📚Curriculo</div>
+                <div>
+                    <div class="card-value">15</div>
+                    <div class="card-label">Materias dictadas</div>
+                </div>
+            </div>
+
+            
+            <div class="card card-purple">
+                <div class="card-emoji">📈promedio</div>
+                <div>
+                    <div class="card-value">7.5</div>
+                    <div class="card-label">Promedio general</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>                                       +

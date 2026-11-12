@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belleza en Cada Detalle</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff0f6;
+            color: #5c2945;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff80ab, #f8bbd0);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #8e2458;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: #ffe0ec;
+        }
+
+        /* PORTADA: SOLAMENTE IMAGEN Y BOTÓN */
+
+        .portada {
+            min-height: 100vh;
+            background-color: #ffe4ef;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 25px;
+        }
+
+        .imagen-inicio {
+     width: 280px;
+    max-width: 90%;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+        .imagen-inicio img {
+        
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+        .boton-ingresar {
+            display: inline-block;
+            background: #ec407a;
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 12px #d889a8;
+            transition: 0.3s;
+        }
+
+        .boton-ingresar:hover {
+            background: #c2185b;
+            transform: scale(1.05);
+        }
+
+        section:not(.portada) {
+            padding: 45px 20px;
+        }
+
+        .titulo {
+            text-align: center;
+            color: #d63384;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .presentacion {
+            text-align: center;
+            max-width: 100px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .contenedor-disenos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #e8b7cc;
+            text-align: center;
+            padding-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .tarjeta h3 {
+            color: #d63384;
+            margin: 15px 10px 8px;
+        }
+
+        .tarjeta p {
+            padding: 0 15px;
+            line-height: 1.5;
+        }
+
+        .galeria {
+            background-color: #ffe0ec;
+        }
+
+        .contenedor-galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .caja-galeria {
+            background: white;
+            border: 3px solid #f8bbd0;
+            border-radius: 18px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .caja-galeria h3 {
+            color: #d63384;
+            margin-bottom: 15px;
+        }
+
+        .imagenes-subidas {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .elemento-imagen {
+            position: relative;
+        }
+
+        .elemento-imagen img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #f8bbd0;
+        }
+
+        .quitar-imagen {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #d63384;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 27px;
+            height: 27px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .boton {
+            display: inline-block;
+            border: none;
+            background: #ec407a;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .boton:hover {
+            background: #c2185b;
+        }
+
+        .informacion {
+            max-width: 950px;
+            margin: auto;
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            line-height: 1.8;
+            box-shadow: 0 4px 12px #e8b7cc;
+        }
+
+        .informacion h3 {
+            color: #d63384;
+            margin: 20px 0 8px;
+        }
+
+        .reserva {
+            background: #ffe0ec;
+        }
+
+        .formulario {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px #e8b7cc;
+        }
+
+        .formulario label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .formulario input,
+        .formulario select,
+        .formulario textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e8a3c1;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        .formulario textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .formulario .boton {
+            width: 100%;
+            margin: 20px 0 0;
+        }
+
+        .contacto {
+            text-align: center;
+            line-height: 2;
+        }
+
+        footer {
+            background: #ec407a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 100px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .titulo {
+                font-size: 25px;
+            }
+
+            .portada {
+                min-height: 90vh;
+            }
+
+            .imagen-inicio {
+                min-height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💅 BELLEZA EN CADA DETALLE 💗</h1>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#disenos">Diseños</a>
+            <a href="#galeria">Galería</a>
+            <a href="#proyecto">Proyecto</a>
+            <a href="#reservas">Reservas</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- PORTADA: NO TIENE TÍTULO NI PÁRRAFOS -->
+
+    <section class="portada" id="inicio">
+<a href="https://ibb.co/pBFSjrPd"><img src="https://i.ibb.co/G4SqQ3JR/MF-imagen.jpg" alt="MF-imagen" border="0"></a>
+        <div class="">
+            <img src="https://ibb.co/Z6qGc7nb" alt="">
+        </div>
+
+        <a href="#disenos" class="boton-ingresar">
+            💗 INGRESAR 💗
+        </a>
+<!-- NUESTROS DISEÑOS DE UÑAS -->
+<section class="seccion-disenos" id="disenos">
+
+    <h2>💖 Nuestros diseños de uñas 💖</h2>
+
+    <div class="contenedor-disenos">
+
+        <div class="tarjeta-diseno">
+            <img src="jpg,imagen-.jpg" alt="jpg,imagen-.jpg">
+            <h3>Uñas modernas</h3>
+            <p>Estilos modernos con colores y detalles hermosos.</p>
+        </div>
+
+        <div class="tarjeta-diseno">
+            <img src="imagen.jpg" alt="imagen.jpg">
+            <h3>Uñas creativas</h3>
+            <p>Diseños originales llenos de creatividad.</p>
+        </div>
+
+        <div class="tarjeta-diseno">
+            <img src="imagen.f.jpg" alt="imagen.f.jpg">
+            <h3>Uñas personalizadas</h3>
+            <p>Diseños únicos según tus gustos y preferencias.</p>
+        </div>
+
+        <div class="tarjeta-diseno">
+            <img src="jpg,imagen.jpg" alt="jpg,imagen.jpg">
+            <h3>Uñas acrílicas</h3>
+            <p>Hermosas uñas con acabados elegantes.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- NUESTRA GALERÍA -->
+<section class="galeria" id="galeria">
+
+    <h2>🌸 Nuestra galería 🌸</h2>
+    <p>Desde nuestra galería, descubre más diseños de uñas.</p>
+
+    <div class="contenedor-galeria">
+
+        <div class="caja-galeria">
+            <h3>💅 Diseños de uñas</h3>
+
+            <div class="imagenes-subidas" id="galeriaUno">
+                <p class="mensaje-vacio">Aquí aparecerán tus imágenes 🌷</p>
+            </div>
+
+            <label class="boton-galeria" for="subirUno">
+                ＋ Insertar imágenes
+            </label>
+
+            <input type="file" id="subirUno"
+                   accept="image/*" multiple hidden>
+        </div>
+
+        <div class="caja-galeria">
+            <h3>💗 Diseños personalizados</h3>
+
+            <div class="imagenes-subidas" id="galeriaDos">
+                <p class="mensaje-vacio">Aquí aparecerán tus imágenes 🌸</p>
+            </div>
+
+            <label class="boton-galeria" for="subirDos">
+                ＋ Insertar imágenes
+            </label>
+
+            <input type="file" id="subirDos"
+                   accept="image/*" multiple hidden>
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+
+/* DISEÑOS DE UÑAS */
+
+.seccion-disenos {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.seccion-disenos h2,
+.galeria h2 {
+    color: #c73582;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.contenedor-disenos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.tarjeta-diseno {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px #e9b5ce;
+    padding-bottom: 12px;
+}
+
+.tarjeta-diseno img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.tarjeta-diseno h3 {
+    color: #d63384;
+    font-size: 17px;
+}
+
+.tarjeta-diseno p {
+    color: #75445c;
+    font-size: 13px;
+    padding: 0 8px;
+}
+
+
+/* GALERÍA */
+
+.galeria {
+    background: #fff0f6;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.galeria > p {
+    color: #8e4168;
+    margin-bottom: 30px;
+}
+
+.contenedor-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.caja-galeria {
+    background: white;
+    border: 3px solid #f3b6d2;
+    border-radius: 20px;
+    padding: 22px;
+    min-height: 320px;
+    box-shadow: 0 5px 12px #e9b5ce;
+}
+
+.caja-galeria h3 {
+    color: #d63384;
+    font-size: 21px;
+}
+
+.imagenes-subidas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.elemento-imagen {
+    min-width: 0;
+    background: #fff7fb;
+    border-radius: 12px;
+    padding: 7px;
+}
+
+.elemento-imagen img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.mensaje-vacio {
+    grid-column: 1 / -1;
+    color: #bd6b93;
+    padding: 30px 5px;
+}
+
+.boton-galeria {
+    display: inline-block;
+    background: #e75499;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 8px 3px;
+}
+
+.acciones-imagen {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 9px;
+}
+
+.acciones-imagen button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+    background: #e75499;
+}
+
+.acciones-imagen .eliminar {
+    background: #d93659;
+}
+
+@media (max-width: 600px) {
+    .contenedor-disenos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contenedor-galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+<script>
+
+function configurarGaleria(inputId, galeriaId) {
+
+    const input = document.getElementById(inputId);
+    const galeria = document.getElementById(galeriaId);
+
+    input.addEventListener("change", function () {
+
+        Array.from(input.files).forEach(function (archivo) {
+
+            if (!archivo.type.startsWith("image/")) return;
+
+            const lector = new FileReader();
+
+            lector.onload = function (evento) {
+
+                const elemento = document.createElement("div");
+                elemento.className = "elemento-imagen";
+
+                const imagen = document.createElement("img");
+                imagen.src = evento.target.result;
+                imagen.alt = "Diseño de uñas";
+
+                const acciones = document.createElement("div");
+                acciones.className = "acciones-imagen";
+
+                const cambiar = document.createElement("button");
+                cambiar.type = "button";
+                cambiar.textContent = "🔄 Cambiar";
+
+                const eliminar = document.createElement("button");
+                eliminar.type = "button";
+                eliminar.textContent = "🗑️ Eliminar";
+                eliminar.className = "eliminar";
+
+                const nuevoInput = document.createElement("input");
+                nuevoInput.type = "file";
+                nuevoInput.accept = "image/*";
+                nuevoInput.hidden = true;
+
+                cambiar.onclick = function () {
+                    nuevoInput.click();
+                };
+
+                nuevoInput.onchange = function () {
+                    const nuevoArchivo = nuevoInput.files[0];
+                    if (!nuevoArchivo) return;
+
+                    const nuevoLector = new FileReader();
+
+                    nuevoLector.onload = function (e) {
+                        imagen.src = e.target.result;
+                    };
+
+                    nuevoLector.readAsDataURL(nuevoArchivo);
+                };
+
+                eliminar.onclick = function () {
+                    elemento.remove();
+
+                    if (!galeria.querySelector(".elemento-imagen")) {
+                        galeria.innerHTML =
+                            '<p class="mensaje-vacio">Aquí aparecerán tus imágenes 🌸</p>';
+                    }
+                };
+
+                acciones.appendChild(cambiar);
+                acciones.appendChild(eliminar);
+
+                elemento.appendChild(imagen);
+                elemento.appendChild(acciones);
+                elemento.appendChild(nuevoInput);
+
+                const mensaje = galeria.querySelector(".mensaje-vacio");
+                if (mensaje) mensaje.remove();
+
+                galeria.appendChild(elemento);
+            };
+
+            lector.readAsDataURL(archivo);
+        });
+
+        input.value = "";
+    });
+}
+
+configurarGaleria("subirUno", "galeriaUno");
+configurarGaleria("subirDos", "galeriaDos");
+
+</script>
+
+</style>
+
+<script>
+function configurarGaleria(inputId, galeriaId) {
+    const input = document.getElementById(inputId);
+    const galeria = document.getElementById(galeriaId);
+
+    input.addEventListener("change", function () {
+        const archivos = Array.from(input.files);
+
+        archivos.forEach(function (archivo) {
+            if (!archivo.type.startsWith("image/")) return;
+
+            const lector = new FileReader();
+
+            lector.onload = function (evento) {
+                const elemento = document.createElement("div");
+                elemento.className = "elemento-imagen";
+
+                const imagen = document.createElement("img");
+                imagen.src = evento.target.result;
+                imagen.alt = "Diseño de uñas";
+
+                const acciones = document.createElement("div");
+                acciones.className = "acciones-imagen";
+
+                const botonCambiar = document.createElement("button");
+                botonCambiar.textContent = "🔄 Cambiar";
+
+                const botonEliminar = document.createElement("button");
+                botonEliminar.textContent = "🗑️ Eliminar";
+                botonEliminar.className = "eliminar";
+
+                const nuevoInput = document.createElement("input");
+                nuevoInput.type = "file";
+                nuevoInput.accept = "image/*";
+                nuevoInput.hidden = true;
+
+                botonCambiar.onclick = function () {
+                    nuevoInput.click();
+                };
+
+                nuevoInput.onchange = function () {
+                    if (nuevoInput.files.length > 0) {
+                        imagen.src = URL.createObjectURL(nuevoInput.files[0]);
+                    }
+                };
+
+                botonEliminar.onclick = function () {
+                    elemento.remove();
+
+                    if (galeria.querySelectorAll(".elemento-imagen").length === 0) {
+                        mostrarMensaje();
+                    }
+                };
+
+                acciones.appendChild(botonCambiar);
+                acciones.appendChild(botonEliminar);
+
+                elemento.appendChild(imagen);
+                elemento.appendChild(acciones);
+                elemento.appendChild(nuevoInput);
+
+                const mensaje = galeria.querySelector(".mensaje-vacio");
+                if (mensaje) mensaje.remove();
+
+                galeria.appendChild(elemento);
+            };
+
+            lector.readAsDataURL(archivo);
+        });
+
+        input.value = "";
+    });
+
+    function mostrarMensaje() {
+        if (galeria.querySelectorAll(".elemento-imagen").length === 0) {
+            const mensaje = document.createElement("p");
+            mensaje.className = "mensaje-vacio";
+            mensaje.textContent = "Aquí aparecerán tus imágenes 🌸";
+            galeria.appendChild(mensaje);
+        }
+    }
+}
+
+configurarGaleria("subirUno", "galeriaUno");
+configurarGaleria("subirDos", "galeriaDos");
+</script>
+    <!-- INFORMACIÓN DEL PROYECTO -->
+
+    <section id="proyecto">
+
+        <h2 class="titulo">🎀 Sobre nuestro proyecto 🎀</h2>
+
+        <div class="informacion">
+
+            <h3>¿Qué es el Nail Art?</h3>
+
+            <p>
+                El Nail Art es el arte de decorar y embellecer las uñas
+                mediante diferentes colores, dibujos, diseños y técnicas
+                creativas que permiten expresar el estilo de cada persona.
+            </p>
+
+            <h3>Objetivo general</h3>
+
+            <p>
+                Implementar un centro de Nail Art personalizado con
+                herramientas digitales para mejorar la experiencia del cliente
+                y facilitar la elección de diseños de uñas.
+            </p>
+
+            <h3>¿En qué consiste nuestra innovación?</h3>
+
+            <p>
+                Nuestra innovación consiste en utilizar una página web para
+                mostrar diferentes diseños de uñas, permitir que los clientes
+                conozcan nuestros servicios y facilitar las solicitudes de
+                reservas de manera sencilla.
+            </p>
+
+            <h3>Importancia del proyecto</h3>
+
+            <p>
+                Este proyecto permite combinar la creatividad, la belleza y
+                la tecnología. También ayuda a que los clientes puedan
+                observar diferentes diseños y elegir el que más les guste
+                de acuerdo con sus preferencias.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- RESERVAS -->
+
+    <section class="reserva" id="reservas">
+
+        <h2 class="titulo">💌 Reserva tu cita 💌</h2>
+
+        <form class="formulario" id="formularioReserva">
+
+            <label for="nombre">Nombre completo:</label>
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Escribe tu nombre"
+                required
+            >
+
+            <label for="telefono">Número de celular:</label>
+
+            <input
+                type="tel"
+                id="telefono"
+                placeholder="000000000"
+                required
+            >
+
+            <label for="servicio">Elige tu servicio:</label>
+
+            <select id="servicio" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="Manicura">Manicura</option>
+                <option value="Uñas acrílicas">Uñas acrílicas</option>
+                <option value="Uñas semipermanentes">Uñas semipermanentes</option>
+                <option value="Diseño personalizado">Diseño personalizado</option>
+                <option value="Decoración de uñas">Decoración de uñas</option>
+            </select>
+
+            <label for="fecha">Fecha de la reserva:</label>
+
+            <input
+                type="date"
+                id="fecha"
+                required
+            >
+
+            <label for="hora">Hora de la reserva:</label>
+
+            <input
+                type="time"
+                id="hora"
+                required
+            >
+
+            <label for="detalles">Detalles de tu diseño:</label>
+
+            <textarea
+                id="detalles"
+                placeholder="Cuéntanos qué diseño te gustaría..."
+            ></textarea>
+
+            <button type="submit" class="boton">
+                💗 Enviar reserva por WhatsApp
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+
+        <h2 class="titulo">📱 Contáctanos 📱</h2>
+
+        <div class="contacto">
+
+            <p>💗 ¿Quieres un diseño hermoso y personalizado?</p>
+
+            <p>Escríbenos para consultar nuestros servicios y reservas.</p>
+
+            <a
+                class="boton"
+                href="https://wa.me/59163753661"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💬 Contactar por WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>💅 BELLEZA EN CADA DETALLE 💗</p>
+
+        <p>Innovación en diseños de uñas personalizados.</p>
+
+        <p>✨ Gracias por visitar nuestra página ✨</p>
+
+    </footer>
+
+    <script>
+        // CONFIGURACIÓN DE WHATSAPP
+        // Cambia TU_NUMERO por tu número real de Bolivia.
+        // Escribe el código de país 591 y tu número, sin espacios ni signos.
+
+        const numeroWhatsApp = "59163753661";
+
+        // FECHA MÍNIMA PARA LAS RESERVAS
+
+        const campoFecha = document.getElementById("fecha");
+
+        const hoy = new Date();
+
+        const anio = hoy.getFullYear();
+        const mes = String(hoy.getMonth() + 1).padStart(2, "0");
+        const dia = String(hoy.getDate()).padStart(2, "0");
+
+        campoFecha.min = `${anio}-${mes}-${dia}`;
+// 💅 FORMULARIO DE RESERVAS POR WHATSAPP
+
+const numeroWhatsApp = "59163753661";
+
+const formulario = document.getElementById("formularioReserva");
+const campoFecha = document.getElementById("fecha");
+
+if (formulario) {
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Obtener los datos del formulario
+        const nombre = document.getElementById("nombre").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const servicio = document.getElementById("servicio").value;
+        const fecha = campoFecha.value;
+        const hora = document.getElementById("hora").value;
+        const detalles = document.getElementById("detalles").value.trim();
+
+        // Comprobar los campos obligatorios
+        if (!nombre || !telefono || !servicio || !fecha || !hora) {
+            alert("💗 Por favor, completa todos los campos obligatorios.");
+            return;
+        }
+
+        // Evitar reservas con fechas anteriores a hoy
+        const hoy = new Date();
+        hoy.setHours(0, 0, 0, 0);
+
+        const fechaElegida = new Date(fecha + "T00:00:00");
+
+        if (fechaElegida < hoy) {
+            alert("📅 Por favor, elige una fecha válida.");
+            return;
+        }
+
+        // Preparar el mensaje para WhatsApp
+        const mensaje =
+            "💅 *¡NUEVA SOLICITUD DE RESERVA!* 💗\n\n" +
+            "👤 *Nombre:* " + nombre + "\n" +
+            "📱 *Celular:* " + telefono + "\n" +
+            "💖 *Servicio:* " + servicio + "\n" +
+            "📅 *Fecha:* " + fecha + "\n" +
+            "🕒 *Hora:* " + hora + "\n" +
+            "🎀 *Detalles del diseño:* " +
+            (detalles || "Sin detalles adicionales") + "\n\n" +
+            "Hola, quisiera consultar mi reserva. 💗";
+
+        // Crear el enlace de WhatsApp
+        const enlace =
+            "https://wa.me/" +
+            numeroWhatsApp +
+            "?text=" +
+            encodeURIComponent(mensaje);
+
+        // Abrir WhatsApp con los datos de la reserva
+        window.open(enlace, "_blank");
+    });
+}
+
+// Establecer hoy como la fecha mínima para reservar
+if (campoFecha) {
+    const hoy = new Date();
+    const anio = hoy.getFullYear();
+    const mes = String(hoy.getMonth() + 1).padStart(2, "0");
+    const dia = String(hoy.getDate()).padStart(2, "0");
+
+    campoFecha.min = `${anio}-${mes}-${dia}`;
+}
+
+        // GALERÍA UNO: INSERTAR Y QUITAR IMÁGENES
+
+        function configurarGaleria(inputId, galeriaId) {
+
+            const input = document.getElementById(inputId);
+            const galeria = document.getElementById(galeriaId);
+
+            input.addEventListener("change", function() {
+
+                const archivos = Array.from(input.files);
+
+                archivos.forEach(function(archivo) {
+
+                    if (!archivo.type.startsWith("image/")) {
+                        alert("Selecciona solamente archivos de imagen.");
+                        return;
+                    }
+
+                    const lector = new FileReader();
+
+                    lector.onload = function(event) {
+
+                        const elemento = document.createElement("div");
+                        elemento.className = "elemento-imagen";
+
+                        const imagen = document.createElement("img");
+                        imagen.src = event.target.result;
+                        imagen.alt = "Diseño de uñas";
+
+                        const botonQuitar = document.createElement("button");
+                        botonQuitar.type = "button";
+                        botonQuitar.className = "quitar-imagen";
+                        botonQuitar.textContent = "×";
+                        botonQuitar.title = "Quitar imagen";
+
+                        botonQuitar.addEventListener("click", function() {
+                            elemento.remove();
+                        });
+
+                        elemento.appendChild(imagen);
+                        elemento.appendChild(botonQuitar);
+
+                        galeria.appendChild(elemento);
+
+                    };
+
+                    lector.readAsDataURL(archivo);
+
+                });
+
+                // Permite seleccionar otra vez el mismo archivo.
+                input.value = "";
+
+            });
+
+        }
+
+        configurarGaleria("subirUno", "galeriaUno");
+        configurarGaleria("subirDos", "galeriaDos");
+
+    </script>
+
+</body>
+</html>

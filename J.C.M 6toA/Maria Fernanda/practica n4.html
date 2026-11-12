@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+ <style>
+ body{
+     background: blue;
+ } 
+  p{
+text-align: center;
+color: lightseagreen;
+margin-bottom:20px;} 
+
+ header h4{
+font-size: 35px
+ }   
+    h4{
+     text-align: center;
+     color: blanchedalmond;
+
+    }
+   body{
+display:flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+margin:0;
+ } 
+ .galeria{
+     width: 650px;
+     height: 200px;
+
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+     grid-template-rows: 1fr 1fr;
+     gap:10px;
+ }
+ .galeria img{
+     width: 100%;
+     height: 100%;
+     object-fit:  cover;
+     border-radius: 20px;
+    }
+    .img{
+        grid-row: 1 / 3;
+
+    }
+    
+    
+    </style>
+    <body> 
+<p>MOMENTOS QUE QUEDAN</p>
+<header id="inicio">
+    <h4> LA GRADUACION SE ACERCA </h4>
+    <div class="galeria">
+        <img scr="imagenes.jpg" alt="imagen grande"class="img1">
+        <img src="imagenes.jpg" alt="imagen pequeña"class="img2">
+        <img src="imagenes.jpg" alt="imagen pequeña"class="img3">
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+    </body>
+    </html>

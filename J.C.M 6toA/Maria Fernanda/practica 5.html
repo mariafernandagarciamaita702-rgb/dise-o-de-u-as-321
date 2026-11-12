@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #a8d8ff;
+        transition: 0.5s;
+    }
+
+    .contenedor{
+        margin-top: 100px;
+    }
+
+    input, button{
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #pagina2{
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Página 1 -->
+<div id="pagina1" class="contenedor">
+    <h1>Formulario</h1>
+
+    <form onsubmit="mostrarPagina2(event)">
+        <input type="text" placeholder="Nombre" required><br>
+        <input type="email" placeholder="Correo" required><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <button onclick="cambiarColor()">Cambiar color de fondo</button>
+</div>
+
+<!-- Página 2 -->
+<div id="pagina2" class="contenedor">
+    <h1>¡Formulario enviado!</h1>
+    <p>Bienvenido a la segunda página.</p>
+
+    <button onclick="volver()">Volver</button>
+</div>
+
+<script>
+let colorActual = 0;
+const colores = ["#a8d8ff", "#ffd6e7"];
+
+function cambiarColor(){
+    colorActual = (colorActual + 1) % 2;
+    document.body.style.backgroundColor = colores[colorActual];
+}
+
+function mostrarPagina2(event){
+    event.preventDefault(); // evita recargar la página
+    document.getElementById("pagina1").style.display = "none";
+    document.getElementById("pagina2").style.display = "block";
+}
+
+function volver(){
+    document.getElementById("pagina2").style.display = "none";
+    document.getElementById("pagina1").style.display = "block";
+}
+</script>
+
+</body>
+</html>
